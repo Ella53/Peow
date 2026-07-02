@@ -7,23 +7,11 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;1,9..144,500&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
 
-<script>// Import the functions you need from the SDKs you need
-
-// TODO: Add SDKs for Firebase products that you want to use
-// https://firebase.google.com/docs/web/setup#available-libraries
-
-// Your web app's Firebase configuration
-const firebaseConfig = {
-  apiKey: "AIzaSyDRNhEakeyDdmNAWIxILO6QBWWvHCzJcj8",
-  authDomain: "peow-9c9ee.firebaseapp.com",
-  projectId: "peow-9c9ee",
-  storageBucket: "peow-9c9ee.firebasestorage.app",
-  messagingSenderId: "304725127042",
-  appId: "1:304725127042:web:7b88c5a8964d7bc6fce99b"
-};
-
-// Initialize Firebase
-
+<!-- ============================================================ -->
+<!-- FIREBASE — replace the object below with YOUR project's config. -->
+<!-- Get it from: Firebase console -> Project settings -> General ->   -->
+<!-- "Your apps" -> the </> web icon -> copy the firebaseConfig object. -->
+<!-- ============================================================ -->
 <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-app-compat.js"></script>
 <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore-compat.js"></script>
 
@@ -192,16 +180,16 @@ const firebaseConfig = {
 /* 1. PASTE YOUR FIREBASE CONFIG HERE                            */
 /* ============================================================ */
 const firebaseConfig = {
-  apiKey: "PASTE_YOUR_API_KEY_HERE",
-  authDomain: "PASTE_YOUR_PROJECT_ID.firebaseapp.com",
-  projectId: "PASTE_YOUR_PROJECT_ID",
-  storageBucket: "PASTE_YOUR_PROJECT_ID.firebasestorage.app",
-  messagingSenderId: "PASTE_YOUR_SENDER_ID",
-  appId: "PASTE_YOUR_APP_ID"
+  apiKey: "AIzaSyDRNhEakeyDdmNAWIxILO6QBWWvHCzJcj8",
+  authDomain: "peow-9c9ee.firebaseapp.com",
+  projectId: "peow-9c9ee",
+  storageBucket: "peow-9c9ee.firebasestorage.app",
+  messagingSenderId: "304725127042",
+  appId: "1:304725127042:web:7b88c5a8964d7bc6fce99b"
 };
 
 firebase.initializeApp(firebaseConfig);
-
+const db = firebase.firestore();
 
 (function(){
   const app = document.getElementById('app');
@@ -362,7 +350,7 @@ firebase.initializeApp(firebaseConfig);
       currentUser = {slot:selectedSlot, name:accounts[selectedSlot].name};
       renderChat();
     }else{
-      errEl.innerHTML = '<div class="error-msg">That password doesn\\'t match.</div>';
+      errEl.innerHTML = '<div class="error-msg">That password doesn\'t match.</div>';
       btn.disabled = false; btn.textContent = 'Open thread';
     }
   }
